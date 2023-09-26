@@ -36,8 +36,23 @@ class Program
             {
                 Console.Write("Enter the name of the task to add to add to the list. ");
                 string task = Console.ReadLine();
-                taskList.Add(task);
-                Console.WriteLine("Task added to the list.");
+
+                // Checks if the List already has that item using the Contains method
+                // Adds item if it doesn't exist in the List
+                if (!taskList.Contains(task.Trim().ToLower()))
+                {
+                    // Adds task to List after removing all trailing or leading white-space and converts it to lower case
+                    taskList.Add(task.Trim().ToLower());
+                    Console.WriteLine("Task added to the list.");
+                }
+                else if (taskList.Contains(task.Trim().ToLower())) // Returns to main menu if item exists
+                {
+                    Console.WriteLine("Try again!");
+                }
+
+                // // Adds task to List after removing all trailing or leading white-space and converts it to lower case
+                // taskList.Add(task.Trim().ToLower());
+                // Console.WriteLine("Task added to the list.");
             }
             // Remove task
             else if (choice == "2")
