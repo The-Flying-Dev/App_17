@@ -42,7 +42,7 @@ class Program
             // Remove task
             else if (choice == "2")
             {
-                // Loop through List
+                // Loop through List to see current items
                 for (int i = 0; i < taskList.Count; i++)
                 {
                     Console.WriteLine(i + " : " + taskList[i]);
